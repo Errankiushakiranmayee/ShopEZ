@@ -259,16 +259,3 @@ You can add screenshots such as:
 
 ---
 
-# 👩‍💻 Author
-
-**Usha Kiranmayee Erranki**
-
-B.Tech – Computer Science and Engineering
-
-GitHub: https://github.com/Errankiushakiranmayee
-
----
-
-# 📄 License
-
-This project was developed for educational and internship purposes as part of the SmartBridge MERN Stack learning program.
