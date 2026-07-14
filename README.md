@@ -1,71 +1,80 @@
-# ShopEZ — MERN Stack E-commerce Application
+# 🛒 ShopEZ – MERN Stack E-Commerce Application
 
-A full-featured E-commerce web application developed using the MERN Stack (MongoDB, Express.js, React.js, Node.js). The application allows users to browse products, manage carts, place orders, and provides an admin dashboard to manage products and orders.
+A full-featured E-Commerce web application built using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**. The platform allows users to browse products, search by category, manage their shopping cart, place orders, and provides an admin dashboard to manage products and categories.
 
 ---
 
-# Tech Stack
+# 📌 Project Overview
 
-## Frontend
+ShopEZ is designed to simulate a real-world online shopping platform. It demonstrates full-stack web development concepts including user authentication, REST APIs, database integration, admin management, and responsive UI development.
+
+---
+
+# 🚀 Tech Stack
+
+### Frontend
 
 * React.js
-* React Router
+* React Router DOM
 * Bootstrap
 * Axios
 
-## Backend
+### Backend
 
 * Node.js
 * Express.js
 
-## Database
+### Database
 
 * MongoDB Atlas
 * Mongoose
 
-## Authentication
+### Authentication
 
-* JWT Authentication
+* JSON Web Token (JWT)
 * bcryptjs
 
 ---
 
-# Features
+# ✨ Features
 
-## User Module
+## 👤 User Features
 
 * User Registration
 * User Login
-* JWT Authentication
+* Secure JWT Authentication
 * Browse Products
 * Search Products
-* Product Details
-* Shopping Cart
+* Filter Products by Category
+* View Product Details
+* Add Products to Cart
 * Place Orders
-* Order History
+* View Order History
 
-## Admin Module
+## 👨‍💼 Admin Features
 
 * Admin Login
-* Add Products
-* Update Products
-* Manage Categories
+* Add New Products
+* Update Existing Products
+* Manage Product Categories
 * Manage Orders
-* Dashboard
+* Admin Dashboard
 
 ---
 
-# Folder Structure
+# 📂 Project Structure
 
-```
+```text
 ShopEZ
 │
 ├── client
 │   ├── public
 │   ├── src
-│   ├── components
-│   ├── pages
-│   ├── context
+│   │   ├── components
+│   │   ├── pages
+│   │   ├── context
+│   │   ├── services
+│   │   └── App.js
 │   └── package.json
 │
 ├── server
@@ -82,136 +91,184 @@ ShopEZ
 
 ---
 
-# Setup Instructions
+# ⚙️ Setup Instructions
 
-## Clone Repository
+## 1. Clone the Repository
 
-```
+```bash
 git clone https://github.com/Errankiushakiranmayee/ShopEZ.git
 ```
 
 ---
 
-## Frontend Setup
+## 2. Install Frontend Dependencies
 
-```
+```bash
 cd client
 npm install
+```
+
+Start the frontend:
+
+```bash
 npm start
 ```
 
-The React application will run on:
+Frontend runs at:
 
-```
+```text
 http://localhost:3000
 ```
 
 ---
 
-## Backend Setup
+## 3. Install Backend Dependencies
 
-```
+```bash
 cd server
 npm install
+```
+
+Start the backend:
+
+```bash
 node index.js
 ```
 
-Backend server runs on:
+Backend runs at:
 
-```
+```text
 http://localhost:6001
 ```
 
 ---
 
-# Environment Variables
+# 🔐 Environment Variables
 
 Create a `.env` file inside the **server** folder.
 
-```
+```env
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_secret_key
 ```
 
+> **Note:** Never commit the `.env` file to GitHub.
+
 ---
 
-# API Overview
+# 📡 API Overview
 
 ## Authentication
 
-| Method | Endpoint            | Description       |
-| ------ | ------------------- | ----------------- |
-| POST   | /api/users/register | Register new user |
-| POST   | /api/users/login    | User Login        |
+| Method | Endpoint              | Description         |
+| ------ | --------------------- | ------------------- |
+| POST   | `/api/users/register` | Register a new user |
+| POST   | `/api/users/login`    | User login          |
 
 ---
 
 ## Products
 
-| Method | Endpoint                                | Description             |
-| ------ | --------------------------------------- | ----------------------- |
-| GET    | /api/products/fetch-products            | Get all products        |
-| GET    | /api/products/fetch-product-details/:id | Get product details     |
-| GET    | /api/products/fetch-categories          | Get all categories      |
-| POST   | /api/products/add-new-product           | Add new product (Admin) |
-| PUT    | /api/products/update-product/:id        | Update product          |
+| Method | Endpoint                                  | Description            |
+| ------ | ----------------------------------------- | ---------------------- |
+| GET    | `/api/products/fetch-products`            | Get all products       |
+| GET    | `/api/products/fetch-product-details/:id` | Get product details    |
+| GET    | `/api/products/fetch-categories`          | Get product categories |
+| POST   | `/api/products/add-new-product`           | Add a product (Admin)  |
+| PUT    | `/api/products/update-product/:id`        | Update product (Admin) |
 
 ---
 
 ## Cart
 
-| Method | Endpoint  | Description      |
-| ------ | --------- | ---------------- |
-| GET    | /api/cart | Get cart         |
-| POST   | /api/cart | Add item to cart |
+| Method | Endpoint    | Description      |
+| ------ | ----------- | ---------------- |
+| GET    | `/api/cart` | View cart        |
+| POST   | `/api/cart` | Add item to cart |
 
 ---
 
 ## Orders
 
-| Method | Endpoint    | Description |
-| ------ | ----------- | ----------- |
-| POST   | /api/orders | Place order |
-| GET    | /api/orders | View orders |
+| Method | Endpoint      | Description |
+| ------ | ------------- | ----------- |
+| GET    | `/api/orders` | View orders |
+| POST   | `/api/orders` | Place order |
 
 ---
 
 ## Admin
 
-| Method | Endpoint         | Description     |
-| ------ | ---------------- | --------------- |
-| POST   | /api/admin/login | Admin Login     |
-| GET    | /api/admin       | Admin Dashboard |
+| Method | Endpoint           | Description     |
+| ------ | ------------------ | --------------- |
+| POST   | `/api/admin/login` | Admin login     |
+| GET    | `/api/admin`       | Admin dashboard |
 
 ---
 
-# Notes
+# 🧪 How to Run the Project
+
+1. Start the backend server.
+2. Ensure MongoDB Atlas is connected successfully.
+3. Start the React frontend.
+4. Open the application in your browser.
+5. Register or log in.
+6. Browse products and place orders.
+7. Log in as an admin to manage products.
+
+---
+
+# 📷 Screenshots
+
+You can add screenshots such as:
+
+* Home Page
+* Login Page
+* Registration Page
+* Product Listing
+* Product Details
+* Cart
+* Admin Dashboard
+* Add Product Page
+
+*(Upload screenshots into a `screenshots` folder and reference them here later.)*
+
+---
+
+# 📌 Notes
 
 * MongoDB Atlas is used as the cloud database.
-* JWT is used for user authentication and route protection.
+* JWT secures authenticated routes.
 * Passwords are encrypted using bcryptjs.
-* Products and categories can be managed through the Admin Dashboard.
-* Ensure MongoDB Atlas network access allows your IP address before starting the backend.
-* The `.env` file is intentionally excluded from the repository for security.
+* The application follows a modular MVC architecture.
+* Categories and products are managed through the Admin Dashboard.
+* The `.env` file is excluded from version control for security.
 
 ---
 
-# Future Enhancements
+# 🔮 Future Enhancements
 
-* Product Reviews
+* Product Reviews and Ratings
 * Wishlist
-* Online Payment Gateway
+* Online Payment Integration
 * Order Tracking
 * Email Notifications
-* Product Ratings
 * Inventory Management
+* Product Recommendations
 * Responsive Mobile UI Improvements
 
 ---
 
-# Author
+# 👩‍💻 Author
 
 **Usha Kiranmayee Erranki**
 
-GitHub:
-https://github.com/Errankiushakiranmayee
+B.Tech – Computer Science and Engineering
+
+GitHub: https://github.com/Errankiushakiranmayee
+
+---
+
+# 📄 License
+
+This project was developed for educational and internship purposes as part of the SmartBridge MERN Stack learning program.
