@@ -32,8 +32,12 @@ function App() {
   };
 
   useEffect(() => {
+  const token = localStorage.getItem("token");
+
+  if (token) {
     fetchCart();
-  }, []);
+  }
+}, []);
 
   return (
     <GeneralContextProvider>

@@ -25,21 +25,32 @@ const GeneralContextProvider = ({children}) => {
     return config;
   });
 
-  useEffect(()=>{
-    fetchCartCount();
-  }, []);
+  useEffect(() => {
+  const token = localStorage.getItem("token");
 
-  const fetchCartCount = async () =>{
-    const userId = localStorage.getItem('userId');
-    if(userId){
-      try {
-        const response = await axios.get('http://localhost:6001/api/cart/fetch-cart');
-        setCartCount(response.data.filter(item=> item.userId === userId).length);
-      } catch (err) {
-        console.error("Cart fetch error:", err);
-      }
-    }
+  if (token) {
+    fetchCartCount();
   }
+}, []);
+
+  const fetchCartCount = async () => {
+  const userId = localStorage.getItem("userId");
+  const token = localStorage.getItem("token");
+
+  if (!userId || !token) return;
+
+  try {
+    const response = await axios.get(
+      "http://localhost:6001/api/cart/fetch-cart"
+    );
+
+    setCartCount(
+      response.data.filter((item) => item.userId === userId).length
+    );
+  } catch (err) {
+    console.error("Cart fetch error:", err);
+  }
+};
 
   const handleSearch = () =>{
     navigate('#products-body');
